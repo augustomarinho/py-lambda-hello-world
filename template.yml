@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2019-08-31'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: 'python-debugging'
+Resources:
+  HelloWorldPython:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: main.lambda_handler
+      Runtime: python3.6
+      Events:
+        EntryPointApp:
+          Type: Api
+          Properties:
+            Path: /
+            Method: get
