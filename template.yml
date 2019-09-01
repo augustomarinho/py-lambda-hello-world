@@ -4,6 +4,8 @@ Description: 'python-debugging'
 Resources:
   HelloWorldPython:
     Type: AWS::Serverless::Function
+    Tags:
+    - appName: "HelloWordlApp"
     Properties:
       CodeUri: src/
       Handler: main.lambda_handler
